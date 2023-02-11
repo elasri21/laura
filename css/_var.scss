@@ -1,0 +1,34 @@
+$back-t: #EEF0F2;
+$title-c: #3B434A;
+$yellow: #FFB727;
+$blue: #2CBDEE;
+$orange: #FFB459;
+$green: #20B38E;
+$left-b: #82909C;
+$pink: #FFF4DF;
+$shadow: #F6F8FA;
+$bullet-bg: #8F8B89;
+$image-b: #554946;
+$price-head: #F8F8F8;
+$field-b: #ced4da;
+$default-c: #444444;
+$grey-t: #777777;
+$comment-c: #eee;
+$name-c: #ddd;
+$white: #fff;
+$skill-bg: #E6E8EB;
+
+//
+$default-f: 'Open Sans', sans-serif;
+$name-f: 'Satisfy', sans-serif;
+$title-f: 'Raleway', sans-serif;
+
+//animation
+@keyframes up_down {
+    0%, 100% {
+        top: 0;
+    }
+    50% {
+        top: 12px;
+    }
+}

@@ -1,0 +1,119 @@
+/*globalrules*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: $default-f;
+    color: $default-c;
+    background-color: $white;
+}
+section {
+    padding: 60px 0;
+}
+.container {
+    @media (min-width: 1200px) {
+        margin: 0 80px !important;
+    }
+    @media (min-width: 922px) and (max-width: 1199px) {
+        margin: 0 60px !important;
+    }
+    @media (min-width: 768px) and (max-width: 921px) {
+        margin: 0 40px !important;
+    }
+    margin: 0 20px;
+}
+.pattern {
+    @media (max-width: 500px) {
+        h2 {
+            font-size: 30px !important;
+            &::before {
+                font-size: 40px !important;
+            }
+        }
+    }
+    margin-bottom: 
+    30px;
+    padding-top: 30px;
+    h2 {
+        font-size: 40px;
+        font-weight: 600;
+        color: $title-c;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        span {
+            position: relative;
+        }
+        &::before {
+            font-size: 50px;
+            font-weight: 700;
+            color: $back-t;
+            text-transform: uppercase;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    p {
+        text-align: center;
+        position: relative;
+    }
+}
+h2, h3, h4, h5, h6 {
+    font-family: $title-f;
+    color: $title-c;
+    text-transform: capitalize;
+}
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $default-c;
+}
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+ul {
+    list-style: none;
+}
+input, textarea {
+    border: none;
+    outline: none;
+    background: none;
+    transition: .3s;
+}
+.btw-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.c-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.align-c {
+    display: flex;
+    align-items: center;
+}
+.flex-start {
+    display: flex;
+    align-items: flex-start;
+}
+.grid-250 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.grid-300 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+/*globalrules*/

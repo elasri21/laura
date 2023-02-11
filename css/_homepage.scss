@@ -1,0 +1,794 @@
+// landing
+.landing {
+    @media (min-width: 768px) {
+        background-image: url("../images/landing-desk.jpg") !important;
+        height: 100vh !important;
+    }
+    background-image: url("../images/landing-mob.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: 80vh;
+    position: relative;
+    &::before {
+        content: "";
+        background-color: rgba(0, 0, 0, .5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .container {
+        position: relative;
+        h1 {
+            font-family: $name-f;
+            font-size: 40px;
+            color: $white;
+            text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        p {
+            color: $white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        a {
+            width: fit-content;
+            margin: 0 auto;
+            i {
+                font-size: 30px;
+                color: $back-t;
+                transition: .3s;
+                position: relative;
+                animation: up_down 1.5s ease-in-out infinite;
+            }
+            &:hover {
+                i {
+                    color: $orange;
+                }
+            }
+        }
+    }
+}
+
+//about 
+.about {
+    .container {
+        .pattern {
+            h2 {
+                &::before {
+                    content: "about";
+                }
+            }
+        }
+        .about-info {
+            @media (min-width: 922px) {
+                .image {
+                    width: 300px !important;
+                    .small {
+                        display: none !important;
+                    }
+                }
+                .info {
+                    width: calc(100% - 320px) !important;
+                }
+            }
+            @media (max-width: 921px) {
+                .image {
+                    .large {
+                        display: none !important;
+                    }
+                }
+            }
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            .image {
+                width: 100%;
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            .info {
+                width: 100%;
+                .personel-info {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                    margin-bottom: 30px;
+                    ul{
+                        @media (min-width: 601px) {
+                            width: calc(50% - 15px) !important;
+                        }
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        width: 100%;
+                        li {
+                            gap: 10px;
+                            i {
+                                font-size: 15px;
+                                color: $orange;
+                            }
+                            span {
+                                flex: 1;
+                                font-size: 16px;
+                                font-weight: 400;
+                                color: $default-c;
+                            }
+                        }
+                    }
+                }
+                .about-work {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                    justify-content: space-between;
+                    .box {
+                        @media (min-width: 601px) {
+                            width: calc(50% - 15px) !important;
+                        }
+                        gap: 10px;
+                        width: 100%;
+                        i {
+                            display: block;
+                            font-size: 40px;
+                            &.green {
+                                color: $green;
+                            }
+                            &.blue {
+                                color: $blue;
+                            }
+                            &.yellow {
+                                color: $yellow;
+                            }
+                            &.orange {
+                                color: $orange;
+                            }
+                        }
+                        h3 {
+                            font-size: 30px;
+                            font-weight: 600;
+                            color: $title-c;
+                            margin-bottom: 5px;
+                        }
+                        p {
+                            color: $title-c;
+                        }
+                    }
+                }
+                .about-skils {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    margin-top: 40px;
+                    .skill{
+                        width: 100%;
+                        height: 10px;
+                        background-color: $skill-bg;
+                        position: relative;
+                        span {
+                            display: block;
+                            height: 10px;
+                            background-color: $yellow;
+                        }
+                        &::before, &::after {
+                            position: absolute;
+                            bottom: calc(100% + 5px);
+                            font-size: 15px;
+                            text-transform: uppercase;
+                            color: $title-c;
+                            font-weight: 400;
+                        }
+                        &::before {
+                            left: 0;
+                        }
+                        &::after {
+                            right: 0;
+                        }
+                        &.html {
+                            &::before {
+                                content: "html";
+                            }
+                            &::after {
+                                content: "100%";
+                            }
+                        }
+                        &.css {
+                            &::before {
+                                content: "css";
+                            }
+                            &::after {
+                                content: "90%";
+                            }
+                        }
+                        &.javascript {
+                            &::before {
+                                content: "javascript";
+                            }
+                            &::after {
+                                content: "75%";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// resume
+.resume {
+    .container {
+        .pattern {
+            h2 {
+                &::before {
+                    content: "my resume";
+                }
+            }
+        }
+        .content {
+            @media (min-width: 922px) {
+                & > div {
+                    width: calc(50% - 15px) !important;
+                }
+            }
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            & > div {
+                width: 100%;
+            }
+            .info {
+                &:first-of-type {
+                    margin-bottom: 20px;
+                }
+                h3 {
+                    font-size: 25px;
+                    text-transform: capitalize;
+                    color: $title-c;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                }
+                .inner-content {
+                    padding-left: 25px;
+                    border-left: 2px solid $left-b;
+                    padding-bottom: 20px;
+                    h4 {
+                        font-size: 20px;
+                        color: $orange;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        margin-bottom: 10px;
+                        position: relative;
+                        &::before {
+                            content: "";
+                            width: 20px;
+                            height: 20px;
+                            border: 2px solid $left-b;
+                            border-radius: 50%;
+                            background-color: $white;
+                            position: absolute;
+                            top: 0;
+                            left: -38px;
+                        }
+                    }
+                    .date {
+                        width: fit-content;
+                        padding: 6px 10px;
+                        background-color: $skill-bg;
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: $title-c;
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+                    p {
+                        color: $title-c;
+                        &.italic {
+                            font-style: italic;
+                            margin-bottom: 15px;
+                        }
+                    }
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        li {
+                            gap: 10px;
+                            .dot {
+                                width: 6px;
+                                height: 6px;
+                                background-color: $title-c;
+                                border-radius: 50%;
+                            }
+                            span {
+                                display: block;
+                                flex: 1;
+                                font-size: 17px;
+                                font-weight: 400;
+                                color: $title-c;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// services
+.services {
+    .container {
+        .pattern {
+            h2 {
+                &::before {
+                    content: "my services";
+                }
+            }
+        }
+        .boxes {
+            gap: 20px;
+            .box {
+                padding: 30px;
+                border: 1px solid transparent;
+                box-shadow:  0 0 5px $shadow;
+                border-radius: 3px;
+                transition: .3s;
+                .icon {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    margin: 0 auto 20px;
+                    background-color: $pink;
+                    i {
+                        font-size: 20px;
+                        color: $orange;
+                    }
+                }
+                h3 {
+                    font-size: 18px;
+                    text-align: center;
+                    text-transform: capitalize;
+                    color: $default-c;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                }
+                p {
+                    text-align: center;
+                }
+                &:hover {
+                    border-color: $orange;
+                }
+            }
+        }
+    }
+}
+
+// testimonial
+.testimonial {
+    @media (min-width: 768px) {
+        background-image: url("../images/about-mob.png") !important;
+    }
+    background-image: url("../images/landing-mob.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .4);
+    }
+    .container {
+        position: relative;
+        .review {
+            margin-bottom: 20px;
+            &.hide {
+                display: none;
+            }
+            img {
+                display: block;
+                width: 80px;
+                height: 80px;
+                border: 6px solid $image-b;
+                border-radius: 50%;
+                margin: 0 auto 10px;
+            }
+            h3 {
+                font-size: 22px;
+                font-weight: 600;
+                color: $white;
+                text-align: center;
+                text-transform: capitalize;
+                margin-bottom: 10px;
+            }
+            h4 {
+                font-size: 15px;
+                font-weight: 400;
+                color: rgba($white, .7);
+                text-align: center;
+                text-transform: capitalize;
+                margin-bottom: 20px;
+            }
+            p {
+                i {
+                    font-size: 20px;
+                    color: $bullet-bg;
+                }
+                font-style: italic;
+                color: rgba($white, .8);
+                text-align: center;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+        }
+        .bullets {
+            gap: 10px;
+            .bullet {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: $bullet-bg;
+                cursor: pointer;
+                transition: .3s;
+                &.active {
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+}
+
+// portfolio 
+.portfolio {
+    .container {
+        .pattern {
+            h2 {
+                &::before {
+                    content: "my portfolio";
+                }
+            }
+        }
+        .categories {
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            span {
+                display: block;
+                text-align: center;
+                padding: 6px 8px;
+                border: 2px solid transparent;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: $title-c;
+                transition: .3s;
+                cursor: pointer;
+                &.active {
+                    border-color: $orange;
+                    color: $orange;
+                }
+            }
+        }
+        .projects {
+            gap: 20px;
+            .project {
+                position: relative;
+                overflow: hidden;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    transition: .3s;
+                }
+                .links {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    padding: 10px 10px;
+                    background-color: rgba(0, 0, 0, .6);
+                    transition: .3s;
+                    opacity: 0;
+                    .title {
+                        h3 {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: $white;
+                            text-transform: capitalize;
+                            margin-bottom: 5px;
+                        }
+                        p {
+                            text-transform: capitalize;
+                            font-size: 15px;
+                            color: $grey-t;
+                        }
+                    }
+                    .link {
+                        gap: 3px;
+                        a {
+                            i {
+                                font-size: 18px;
+                                color: $white;
+                                transition: .3s;
+                            }
+                            &:hover {
+                                i {
+                                    color: $orange;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+                    .links {
+                        opacity: 1;
+                    }
+                }
+                &.hide {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// pricing
+.pricing {
+    .container {
+        .pattern {
+            h2 {
+                &::before {
+                    content: "pricing";
+                }
+            }
+        }
+        .prices {
+            gap: 20px;
+            .price {
+                border-radius: 4px;
+                box-shadow: 0 0 5px $shadow;
+                .head {
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    text-align: center;
+                    padding: 15px;
+                    border-radius: 4px 4px 0 0;
+                    background-color: $price-head;
+                    color: $title-c;
+                    &.bg-yellow {
+                        background-color: $yellow;
+                        color: $white;
+                    }
+                }
+                .body {
+                    padding: 25px 20px;
+                    background-color: $white;
+                    h3 {
+                        font-size: 30px;
+                        font-weight: 600;
+                        color: $yellow;
+                        text-align: center;
+                        margin-bottom: 15px;
+                        sup {
+                            font-size: 18px;
+                            margin-right: -5px;
+                        }
+                        span {
+                            font-size: 16px;
+                            color: $grey-t;
+                            margin-left: -5px;
+                        }
+                    }
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                        margin-bottom: 20px;
+                        li {
+                            width: 100%;
+                            text-align: center;
+                            font-size: 15px;
+                            font-weight: 400;
+                            color: $default-c;
+                        }
+                    }
+                }
+                .foot {
+                    padding: 15px;
+                    background-color: $price-head;
+                    border-radius: 0 0 4px 4px;
+                    a {
+                        padding: 10px 40px;
+                        border-radius: 3px;
+                        background-color: $yellow;
+                        color: $white;
+                        font-size: 16px;
+                        font-size: 600;
+                        color: $white;
+                        text-transform: capitalize;
+                        opacity: .8;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// contact
+.contact {
+    .container {
+        .pattern {
+            h2 {
+                &::before {
+                    content: "contact me";
+                }
+            }
+        }
+        .contact-info {
+            @media (min-width: 922px) {
+                .static-info {
+                    width: calc(50% - 15px) !important;
+                }
+                .form-contact {
+                    width: calc(50% - 15px) !important;
+                }
+            }
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            .static-info {
+                @media (min-width: 1000px) {
+                    & >  div {
+                        &.half {
+                            width: calc(50% - 10px) !important;
+                        }
+                    }
+                }
+                @media (min-width: 600px) and (max-width: 921px) {
+                    & >  div {
+                        &.half {
+                            width: calc(50% - 10px) !important;
+                        }
+                    }
+                }
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                & > div {
+                    width: 100%;
+                    padding: 20px 20px;
+                    background-color: $white;
+                    box-shadow: 0 0 5px $shadow;
+                    .icon {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        background-color: $pink;
+                        margin: 0 auto 10px;
+                        i {
+                            font-size: 30px;
+                            color: $yellow;
+                        }
+                    }
+                    h3 {
+                        text-align: center;
+                        color: $title-c;
+                        text-transform: capitalize;
+                        font-size: 22px;
+                        margin-bottom: 15px;
+                    }
+                    p {
+                        color: $title-c;
+                        font-size: 15px;
+                        font-weight: 300;
+                        text-align: center;
+                    }
+                    .social {
+                        gap: 10px;
+                        a {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            border: 1px solid $title-c;
+                            background-color: $white;
+                            i {
+                                font-size: 20px;
+                                color: $title-c;
+                                transition: .3s;
+                            }
+                            &:hover {
+                                background-color: $yellow;
+                                border-color: $yellow;
+                                i {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .form-contact {
+                width: 100%;
+                form {
+                    @media (min-width: 1000px) {
+                        .half {
+                            width: calc(50% - 10px) !important;
+                        }
+                    }
+                    @media (min-width: 600px) and (max-width: 921px) {
+                        .half {
+                            width: calc(50% - 10px) !important;
+                        }
+                    }
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    .form-control {
+                        width: 100%;
+                        .field {
+                            display: block;
+                            width: 100%;
+                            padding: 15px 20px;
+                            border: 1px solid $field-b;
+                            font-size: 16px;
+                            font-weight: 400;
+                            caret-color: $yellow;
+                            &::placeholder {
+                                font-size: 16px;
+                                text-transform: capitalize;
+                                color: $title-c;
+                                opacity: .8;
+                                transition: .3s;
+                            }
+                            &:focus {
+                                border-color: $yellow;
+                                &::placeholder {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                        textarea {
+                            height: 130px;
+                        }
+                    }
+                    .submit {
+                        display: block;
+                        width: fit-content;
+                        padding: 15px 40px;
+                        text-align: center;
+                        text-transform: capitalize;
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: $white;
+                        background: $yellow;
+                        transition: .3s;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        margin: 0 auto;
+                        opacity: .8;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

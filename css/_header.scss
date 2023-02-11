@@ -1,0 +1,131 @@
+header {
+    //background-color: black;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 73px;
+    z-index: 111;
+    .container {
+        position: relative;
+        gap: 20px;
+        .logo {
+            a {
+                display: block;
+                font-size: 30px;
+                font-family: $name-f;
+                font-weight: 400;
+                color: $white;
+                text-transform: capitalize;
+            }
+        }
+        nav {
+            @media (min-width: 922px) {
+                display: block !important;
+                ul {
+                    li {
+                        position: relative;
+                        ul {
+                            opacity: 0;
+                            display: none;
+                            transition: .3s;
+                            position: absolute;
+                            top: 100%;
+                            right: 0;
+                            width: 200px;
+                            flex-direction: column;
+                            padding: 20px 20px;
+                            box-shadow: 0 0 5px $shadow;
+                            background-color: $white;
+                            border-radius: 6px;
+                            li {
+                                a {
+                                    color: $default-c;
+                                }
+                            }
+                        }
+                        &:hover {
+                            ul {
+                                opacity: 1;
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+            @media (max-width: 921px) {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                border-radius: 6px;
+                background-color: $white;
+                padding: 30px 20px;
+                ul {
+                    flex-direction: column;
+                    li {
+                        position: relative;
+                        &.down-parent, a {
+                            color: $default-c !important;
+                            &:hover, &.active {
+                                color: $orange !important;
+                            }
+                        }
+                        ul {
+                            display: none;
+                            margin-top: 5px;
+                            padding: 20px;
+                            box-shadow: 5px 5px 10px $shadow;
+
+                        }
+                        i {
+                            position: absolute;
+                            right: 0;
+                            top: 7px;
+                        }
+                        &.down-parent {
+                            &.clicked {
+                                ul {
+                                    display: flex !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ul {
+                display: flex;
+                gap: 20px;
+                li {
+                    cursor: pointer;
+                    transition: .3s;
+                    &.down-parent, a {
+                        display: block;
+                        font-size: 16px;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        color: $white;
+                        &:hover, &.active {
+                            color: $orange;
+                        }
+                    }
+                }
+            }
+        }
+        .toggle-menu {
+            @media (min-width: 922px) {
+                display: none !important;
+            }
+            i {
+                font-size: 20px;
+                color: $white;
+                cursor: pointer;
+            }
+            .close {
+                display: none;
+            }
+        }
+    }
+}
